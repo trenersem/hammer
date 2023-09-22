@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import Intro from "./components/intro";
+import Description from "./components/description";
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <main>
       <Intro />
+      <Description />
     </main>
   )
 }

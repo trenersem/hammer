@@ -30,4 +30,15 @@
     text-align: center;
     white-space: nowrap;
 }
+.introImage{
+    filter: brightness(70%);
+    width: 350px;
+    height: 475px;
+    position: absolute;
+}
+
+.introImage img{
+    object-fit: cover;
+    object-position: top;
+}
 

@@ -42,6 +42,14 @@ const Intro = () => {
             </div>
             <div className={styles.intro}>
                      <h1 data-scroll data-scroll-speed="0.3">Our company name</h1>
+                     <div ref={introImage} data-scroll data-scroll-speed="0.3" className={styles.introImage}>
+                        <Image
+                            src={'/images/image-2.avif'}
+                            alt="intro image"
+                            fill={true} 
+                            priority={true}
+                        />
+                    </div>
              </div>
         </div>
   )
