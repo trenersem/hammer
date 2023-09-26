@@ -1,14 +1,50 @@
 import React, { useLayoutEffect, useRef } from 'react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
-import styles from './style.module.css';
+import styles from './style.module.scss';
+import Image from 'next/image';
 
 const phrases = ["Los Flamencos National Reserve", "is a nature reserve located", "in the commune of San Pedro de Atacama", "The reserve covers a total area", "of 740 square kilometres (290 sq mi)"]
 
 export default function Description() {
+  const descriptionImage = React.useRef(null);
+
+    React.useLayoutEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: descriptionImage.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=400px bottom",
+            }
+        })
+
+        timeline
+            .from(descriptionImage.current, {
+                bottom: '200%',
+                opacity: '0',
+                clipPath: 'inset(15%)'
+            })
+             .to(descriptionImage.current, {
+                bottom: '0',
+                opacity: '1',
+                clipPath: 'inset(0%)'
+            })
+
+    }, [])
 
   return (
     <div className={styles.description} >
+         <div ref={descriptionImage} data-scroll data-scroll-speed="0.3" className={styles.descriptionImage}>
+            <Image
+                src={'/images/paint.avif'}
+                alt="intro image"
+                fill={true} 
+                priority={true}
+            />
+        </div>
         {
             phrases.map( (phrase, index) => {
                 return <AnimatedText key={index}>{phrase}</AnimatedText>

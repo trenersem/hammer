@@ -1,0 +1,29 @@
+@import '../../styles/layout.scss';
+
+.description{
+    position: relative;
+    color: white;
+    font-size: 2vw;
+    text-transform: uppercase;
+    margin-top: 20vw;
+    margin-left: 5vw;
+}
+
+.descriptionImage{
+    filter: brightness(70%);
+    height: 270px;
+    width: 375px;
+    position: absolute;
+    right: 5vw;
+    bottom: 0;
+    z-index:  $zBelow;
+}
+
+.descriptionImage img{
+    object-fit: cover;
+    object-position: top;
+}
+.description p{
+    margin: 0px;
+    position: relative;
+}
