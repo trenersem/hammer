@@ -89,8 +89,8 @@ function AnimatedText({icon, phrase, title} : {icon: React.ReactNode, phrase: st
             scrollTrigger: {
                 trigger: text.current,
                 scrub: true,
-                start: "0px top",
-                end: "bottom+=400px bottom",
+                start: "0px bottom",
+                end: "bottom+=300px bottom",
             },
             opacity: 0,
             left: "-250px",

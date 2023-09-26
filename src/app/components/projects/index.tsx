@@ -28,7 +28,7 @@ const projects = [
     },
     {
         title: "Plumbing",
-        src: "background.pdf"
+        src: "backgraund.avif"
     },
     {
         title: "Installation",
