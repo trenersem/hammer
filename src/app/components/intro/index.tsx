@@ -9,6 +9,7 @@ import Typography from '../atoms/typography';
 const Intro = () => {
 
     const background = React.useRef(null);
+    const title = React.useRef(null);
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -26,9 +27,11 @@ const Intro = () => {
             .from(background.current, {
                 clipPath: 'inset(0%)'
             })
-            //  .to(introImage.current, {height: "200px"}, 0)
              .to(background.current, {
-                clipPath: 'inset(15%)'
+                clipPath: 'inset(0%)',
+            })
+            .to(title.current, {
+                opacity: '0'
             })
 
     }, [])
@@ -43,7 +46,7 @@ const Intro = () => {
                     priority={true}
                 />
             </div>
-            <div className={styles.intro}>
+            <div className={styles.intro} ref={title}>
                      <Typography tag='h1' size='text-l' data-scroll data-scroll-speed="-0.3">Home Improvements Just Got Easier</Typography>
                      <Typography tag='h2' size='text-m' data-scroll data-scroll-speed="-0.3">Service You Can Trust</Typography>
              </div>

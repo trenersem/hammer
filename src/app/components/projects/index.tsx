@@ -7,21 +7,34 @@ import Typography from '../atoms/typography';
 
 const projects = [
     {
-        title: "Salar de Atacama",
+        title: "Demolition",
+        src: "test-2.avif"
+    },
+    {
+        title: "ODD Jobs",
         src: "image-2.avif"
     },
     {
-        title: "Valle de la luna",
-        src: "image-3.avif"
+        title: "Painting",
+        src: "paint.avif"
     },
     {
-        title: "Miscanti Lake",
+        title: "Makeovers",
         src: "image-4.avif"
     },
     {
-        title: "Miniques Lagoons",
+        title: "Electrical",
+        src: "image-3.avif"
+    },
+    {
+        title: "Plumbing",
+        src: "background.pdf"
+    },
+    {
+        title: "Installation",
         src: "image-5.avif"
     },
+
 ]
 
 export default function Projects() {

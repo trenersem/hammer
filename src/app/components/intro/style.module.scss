@@ -6,6 +6,11 @@
     height: 100vh;
     display: flex;
     justify-content: center;
+    box-shadow: inset 0px -185px 50px -118px rgba(0,0,0,0.9);
+
+    @media ($media_mobile) {
+        height: 110vh;
+    }
 }
 
 .backgroundImage{
@@ -13,6 +18,7 @@
     height: 100vh;
     position: absolute;
     filter: brightness(60%);
+    z-index: $zBelow;
 
     @media ($media_mobile) {
         height: 110vh;

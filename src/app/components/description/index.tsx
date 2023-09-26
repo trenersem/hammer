@@ -9,8 +9,6 @@ import { IoMdSettings } from 'react-icons/io';
 import { BsFillPeopleFill } from 'react-icons/bs';
 
 
-
-const phrases = ["We are the team of highly professional technician with an average 15 years of experience in the field.", "Our technicians are experienced with a variety of skills in different fields and get work done.", "At FixIt Handyman we offer an exceptional service and high-quality workmanship which is"]
 const phrasesWithInfo = [
   {
     icon: <FaBrain/>,
@@ -91,7 +89,7 @@ function AnimatedText({icon, phrase, title} : {icon: React.ReactNode, phrase: st
             scrollTrigger: {
                 trigger: text.current,
                 scrub: true,
-                start: "0px bottom",
+                start: "0px top",
                 end: "bottom+=400px bottom",
             },
             opacity: 0,
