@@ -52,6 +52,13 @@
     position: relative;
     width: 100%;
     margin-top: 200px;
+
+    @media($media_mobile) {
+         flex-direction: row;
+         gap: 15px;
+         overflow: hidden;
+         overflow-y: scroll;
+    }
 }
 
 .projectEl{
@@ -67,5 +74,6 @@
     margin: 0px;
     margin-top: 40px;
     margin-bottom: 20px;
+    white-space: nowrap;
     cursor: default;
 }
