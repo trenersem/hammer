@@ -3,6 +3,7 @@ import React, { useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger} from 'gsap/ScrollTrigger';
 import styles from './style.module.scss';
+import Typography from '../atoms/typography';
 
 
 const Intro = () => {
@@ -42,8 +43,9 @@ const Intro = () => {
                     priority={true}
                 />
             </div>
-            <div className={styles.intro}>
-                     <h1 data-scroll data-scroll-speed="-0.3">Our company name</h1>
+            <div className={styles.intro} data-scroll data-scroll-speed="-0.3">
+                     <Typography tag='h1' size='text-l'>Home Improvements Just Got Easier</Typography>
+                     <Typography tag='h2' size='text-m'>Service You Can Trust</Typography>
              </div>
         </div>
   )

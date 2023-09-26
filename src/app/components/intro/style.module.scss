@@ -25,16 +25,25 @@
 
 .intro{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     position: relative;
-    margin-top: 30vh;
+    margin-top: -5vh;
 }
 
 .intro h1{
     color: white;
     font-size: 7vw;
+    line-height: 120%;
     z-index: 3;
     text-align: center;
-    white-space: nowrap;
+    text-transform: uppercase;
+}
+.intro h2{
+    color: white;
+    font-size: 4vw;
+    z-index: 3;
+    text-align: center;
+    text-transform: uppercase;
 }
 

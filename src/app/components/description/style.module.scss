@@ -10,13 +10,17 @@
 }
 
 .descriptionImage{
-    filter: brightness(70%);
+    filter: brightness(90%);
     height: 270px;
     width: 375px;
     position: absolute;
     right: 5vw;
     bottom: 0;
     z-index:  $zBelow;
+
+    @media ($media_mobile) {
+        bottom: unset;
+    }
 }
 
 .descriptionImage img{

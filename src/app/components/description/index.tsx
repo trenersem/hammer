@@ -17,7 +17,7 @@ export default function Description() {
                 trigger: descriptionImage.current,
                 scrub: true,
                 start: "0px bottom",
-                end: "bottom+=400px bottom",
+                end: "bottom+=500px",
             }
         })
 
@@ -28,7 +28,7 @@ export default function Description() {
                 clipPath: 'inset(15%)'
             })
              .to(descriptionImage.current, {
-                bottom: '0',
+                bottom: 'unset',
                 opacity: '1',
                 clipPath: 'inset(0%)'
             })
