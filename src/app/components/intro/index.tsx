@@ -43,9 +43,9 @@ const Intro = () => {
                     priority={true}
                 />
             </div>
-            <div className={styles.intro} data-scroll data-scroll-speed="-0.3">
-                     <Typography tag='h1' size='text-l'>Home Improvements Just Got Easier</Typography>
-                     <Typography tag='h2' size='text-m'>Service You Can Trust</Typography>
+            <div className={styles.intro}>
+                     <Typography tag='h1' size='text-l' data-scroll data-scroll-speed="-0.3">Home Improvements Just Got Easier</Typography>
+                     <Typography tag='h2' size='text-m' data-scroll data-scroll-speed="-0.3">Service You Can Trust</Typography>
              </div>
         </div>
   )

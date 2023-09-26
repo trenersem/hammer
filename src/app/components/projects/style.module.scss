@@ -1,8 +1,15 @@
+@import '../../styles/layout.scss';
+
 .projects{
     position: relative;
     color: white;
     margin-top: 25vh;
     padding: 10%;
+
+    @media($media_mobile) {
+        padding: 15px;
+    }
+
 }
 
 .projectDescription{
@@ -26,7 +33,11 @@
     display: flex;
     height: 100%;
     width: 20%;
-    font-size: 1.6vw;
+
+    @media($media_mobile) {
+         width: 40%;
+    }
+    
 }
 
 .column:last-of-type{

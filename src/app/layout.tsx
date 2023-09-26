@@ -1,5 +1,6 @@
 import { inter, roboto } from './fonts'
 import './globals.css'
+import './styles/app.scss';
 import type { Metadata } from 'next'
 
 

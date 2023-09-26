@@ -4,9 +4,44 @@
     position: relative;
     color: white;
     font-size: 2vw;
-    text-transform: uppercase;
     margin-top: 20vw;
-    margin-left: 5vw;
+    margin-left: 0 5vw;
+}
+.list {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: #2424249c;
+    gap: 20px;
+    @media ($media_mobile) {
+        flex-direction: column;
+    }
+}
+.item {
+    position: relative;
+    padding: 0 8px 12px 8px;
+
+    &__content {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: left;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        .title {
+              text-transform: uppercase;
+        }
+
+        .icon {
+            background: var(--color-yellow);
+            height: 100%;
+            padding: 10px;
+            border-radius: 0 0 6px 6px;
+        }
+    }
+
 }
 
 .descriptionImage{
