@@ -1,15 +1,22 @@
+@import '../../styles/layout.scss';
+
 .homeHeader{
     position: relative;
     width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
 }
 
 .backgroundImage{
     width: 100%;
-    height: 140vh;
+    height: 100vh;
     position: absolute;
     filter: brightness(60%);
+
+    @media ($media_mobile) {
+        // height: ;
+    }
 }
 
 .backgroundImage img{
@@ -20,7 +27,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    margin-top: 35vh;
+    margin-top: 30vh;
 }
 
 .intro h1{

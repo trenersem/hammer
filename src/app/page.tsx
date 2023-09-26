@@ -3,6 +3,7 @@ import React from "react";
 import Intro from "./components/intro";
 import Description from "./components/description";
 import Projects from "./components/projects";
+import Header from "./components/header";
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
 
   return (
     <main>
+      <Header />
       <Intro />
       <Description />
       <Projects />
