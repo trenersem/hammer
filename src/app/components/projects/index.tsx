@@ -140,13 +140,13 @@ const Snapping = () => {
                 <div className='panel bg-red-50 min-w-[100vw] h-[500px]'>
                     1
                 </div>
-                <div className='panel bg-lime-200 w-[100vw] h-[500px]'>
+                <div className='panel bg-lime-200 min-w-[100vw] h-[500px]'>
                     2
                 </div>
-                <div className='panel bg-yellow-600 w-[100vw] h-[500px]'>
+                <div className='panel bg-yellow-600 min-w-[100vw] h-[500px]'>
                     3
                 </div>
-                <div className='panel bg-slate-500 w-[100vw] h-[500px]'>
+                <div className='panel bg-slate-500 min-w-[100vw] h-[500px]'>
                     3
                 </div>
             </div>
