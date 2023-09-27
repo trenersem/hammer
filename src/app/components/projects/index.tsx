@@ -54,9 +54,8 @@ export default function Projects() {
         ScrollTrigger.create({
             trigger: imageContainer.current,
             pin: true,
-            markers: true,
             start: "top-=100px",
-            end: `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight - 150}px`,
+            end: `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight - 250}px`,
         })
     }, [])
 
