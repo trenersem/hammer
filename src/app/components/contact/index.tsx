@@ -155,7 +155,7 @@ const ResumeLink: React.FC = () => {
                 trigger: text.current,
                 scrub: true,
                 start: "0px bottom",
-                end: "bottom+=300px bottom",
+                end: "bottom+=400px bottom",
                 toggleActions: 'restart pause none none'
             },
             x: -400,
