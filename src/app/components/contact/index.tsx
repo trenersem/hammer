@@ -115,9 +115,9 @@ const Contact = () => {
                     />
                     {errors.name && (
                       <p className=" text-red-500 mt-1">
-                        {errors.name === "required" &&
+                        {(errors.name as unknown as string) === "required" &&
                           "This field is required."}
-                        {errors.name === "maxLength" &&
+                        {(errors.name as unknown as string) === "maxLength" &&
                           "Max length is 100 char"}
                       </p>
                     )}
@@ -169,7 +169,7 @@ const Contact = () => {
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
-                    name="subject"
+                    // name="subject"
                     {...register("subject", {
                       required: true,
                       maxLength: 100,
@@ -177,9 +177,9 @@ const Contact = () => {
                   />
                   {errors.subject && (
                     <p className=" text-red-500 mt-1">
-                      {errors.subject === "required" &&
+                      {(errors.subject as unknown as string) === "required" &&
                         "This field is required."}
-                      {errors.subject === "maxLength" &&
+                      {(errors.subject as unknown as string) === "maxLength" &&
                         "Max length is 100 char"}
                     </p>
                   )}
@@ -188,7 +188,7 @@ const Contact = () => {
                   <label className="uppercase text-sm py-2">Message</label>
                   <textarea
                     className="border-2 rounded-lg p-3 border-gray-300"
-                    rows="10"
+                    rows={10}
                     {...register("message", {
                       required: true,
                       maxLength: 2000,
