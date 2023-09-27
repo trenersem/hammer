@@ -92,7 +92,7 @@ const LinkedinIcon: React.FC = () => {
         gsap.from(text.current, {
             scrollTrigger: {
                 trigger: text.current,
-                scrub: true,
+                scrub: 3,
                 start: "0px bottom",
                 end: "bottom+=200px bottom",
                 toggleActions: 'restart pause none none'
@@ -127,7 +127,7 @@ const MailIcon: React.FC = () => {
         gsap.from(text.current, {
             scrollTrigger: {
                 trigger: text.current,
-                scrub: true,
+                scrub: 3,
                 start: "0px bottom",
                 end: "bottom+=200px bottom",
                 toggleActions: 'restart pause none none'
@@ -153,7 +153,7 @@ const ResumeLink: React.FC = () => {
         gsap.from(text.current, {
             scrollTrigger: {
                 trigger: text.current,
-                scrub: true,
+                scrub: 3,
                 start: "0px bottom",
                 end: "bottom+=200px bottom",
                 toggleActions: 'restart pause none none'
