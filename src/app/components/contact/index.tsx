@@ -29,9 +29,9 @@ const Contact = () => {
       className="w-ful max-w-[100wv]"
     >
       <div
-        className="max-w-[1240px] m-auto px-4 py-16 w-full"
+        className="max-w-[1240px] m-auto px-4 py-4 w-full"
       >
-        <p className="text-xl tracking-widest uppercase text-[#5651e5]">
+        <p className="text-xl tracking-widest uppercase text-[#ffffff]">
           Contact
         </p>
         <h2 className="py-4">Get In Touch</h2>
