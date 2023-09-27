@@ -100,8 +100,6 @@ const LinkedinIcon: React.FC = () => {
             x: -400,
             rotation: 360,
             duration:3,
-            // opacity: 0,
-            // left: "-250px",
         })
     }, [])
 
@@ -137,8 +135,6 @@ const MailIcon: React.FC = () => {
             x: -400,
             rotation: 720,
             duration:3,
-            // opacity: 0,
-            // left: "-250px",
         })
     }, [])
     return (
@@ -165,16 +161,14 @@ const ResumeLink: React.FC = () => {
             x: -400,
             rotation: 920,
             duration:3,
-            // opacity: 0,
-            // left: "-250px",
         })
     }, []);
     return (
-        <Link href="/resume">
+        <div ref={text}>
             <div className="rounded-full shadow-3xl  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
             <BsFillPersonLinesFill />
             </div>
-        </Link>
+        </div>
 )};
 
 const ContactForm: React.FC = () => {
