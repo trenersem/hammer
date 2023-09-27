@@ -46,16 +46,16 @@ const projects = [
 export default function Projects() {
 
     const [selectedProject, setSelectedProject] = useState(0);
-    const container = useRef(null);
-    const imageContainer = useRef(null);
-
+    const container = useRef<HTMLDivElement | null>(null);
+    const imageContainer = useRef<HTMLDivElement | null>(null);
     useLayoutEffect( () => {
         gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.create({
-            trigger: imageContainer.current,
+            trigger: container.current,
             pin: true,
             start: "top-=100px",
-            end: "bottom+=750px bottom",
+            // end: document.body.offsetHeight - window.innerHeight - 50,
+            end: container.current!.offsetHeight,
         })
     }, [])
 
@@ -64,7 +64,6 @@ export default function Projects() {
             <Typography
                 tag='h2'
                 className={styles.title}
-                data-scroll data-scroll-speed="0.1"
             >
                 Our Services
             </Typography>

@@ -50,14 +50,12 @@ const Contact = () => {
               </div> */}
               <div>
                 <h2 className="py-2">Semenov Volodymyr</h2>
-                <p>Front-End Developer</p>
                 <p className="py-4">
-                  I am available for freelance or full-time positions. Contact
-                  me and let&apos;s talk.
+                  Email us using our simple form and wet&apos;ll respond within 10 working days.
                 </p>
               </div>
               <div>
-                <p className="uppercase pt-8">Connect With Me</p>
+                <p className="uppercase pt-8">Connect With Us</p>
                 <div className="flex items-center justify-between py-4">
                   <a
                     href="https://www.linkedin.com/in/volodymyr-semenov-872980224/"
@@ -68,16 +66,6 @@ const Contact = () => {
                       <FaLinkedinIn />
                     </div>
                   </a>
-                  <a
-                    href="https://github.com/trenersem"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                      <FaGithub />
-                    </div>
-                  </a>
-
                   <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                     <AiOutlineMail />
                   </div>
