@@ -103,7 +103,7 @@ export default function Projects() {
 }
 
 const Snapping = () => {
-    const container = useRef(null)
+    const container = useRef<HTMLDivElement | null>(null);
 
      React.useLayoutEffect( () => {
         gsap.registerPlugin(ScrollTrigger);
@@ -118,7 +118,7 @@ const Snapping = () => {
                 scrub: 1,
                 snap: 1 / (sections.length - 1),
                 // base vertical scrolling on how wide the container is so it feels more natural.
-                end: "+=1500",
+                end: () => `+=` + container.current!.offsetWidth,
             }
             });
         // gsap.from(text.current, {
