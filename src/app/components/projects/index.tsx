@@ -97,6 +97,57 @@ export default function Projects() {
                     })
                 }
             </div>
+            <Snapping />
+        </div>
+    )
+}
+
+const Snapping = () => {
+    const container = useRef(null)
+
+     React.useLayoutEffect( () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        let sections = gsap.utils.toArray(".panel");
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: container.current,
+                pin: true,
+                scrub: 1,
+                snap: 1 / (sections.length - 1),
+                // base vertical scrolling on how wide the container is so it feels more natural.
+                end: "+=1500",
+            }
+            });
+        // gsap.from(text.current, {
+        //     scrollTrigger: {
+        //         trigger: text.current,
+        //         scrub: 3,
+        //         start: "0px bottom",
+        //         end: "bottom+=200px bottom",
+        //         toggleActions: 'restart pause none none'
+        //     },
+        //     x: -400,
+        //     rotation: 720,
+        //     duration:3,
+        // })
+    }, [])
+    return (
+        <div ref={container} className=''>
+            <div className='panel bg-red-50 w-[100vw] h-[500px]'>
+                1
+            </div>
+            <div className='panel bg-green w-[100vw] h-[500px]'>
+                2
+            </div>
+            <div className='panel bg-yellow-600 w-[100vw] h-[500px]'>
+                3
+            </div>
+            <div className='panel bg-slate-500 w-[100vw] h-[500px]'>
+                3
+            </div>
         </div>
     )
 }
