@@ -88,21 +88,21 @@ const LinkedinIcon: React.FC = () => (
     target="_blank"
     rel="noreferrer"
   >
-    <div className="rounded-full shadow-lg shadow-gray-400  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+    <div className="rounded-full shadow-3xl  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
       <FaLinkedinIn />
     </div>
   </a>
 );
 
 const MailIcon: React.FC = () => (
-  <div className="rounded-full shadow-lg shadow-gray-400  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+  <div className="rounded-full shadow-3xl  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
     <AiOutlineMail />
   </div>
 );
 
 const ResumeLink: React.FC = () => (
   <Link href="/resume">
-    <div className="rounded-full shadow-lg shadow-gray-400  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+    <div className="rounded-full shadow-3xl  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
       <BsFillPersonLinesFill />
     </div>
   </Link>
@@ -230,12 +230,21 @@ const FormField: React.FC<{
   </div>
 );
 
-const BackToTopButton: React.FC = () => (
-  <Link href="/">
-    <div className="rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300">
-      <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
-    </div>
-  </Link>
-);
+const BackToTopButton: React.FC = () => {
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
+    return (
+        <div
+            onClick={scrollToTop}
+            className="rounded-full shadow-3xl p-4 cursor-pointer hover:scale-110 ease-in duration-300"
+        >
+                <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
+        </div>
+    )
+};
 
 export default Contact;
