@@ -131,7 +131,7 @@ const MailIcon: React.FC = () => {
                 trigger: text.current,
                 scrub: true,
                 start: "0px bottom",
-               end: "bottom+=300px bottom",
+                end: "bottom+=300px bottom",
                 toggleActions: 'restart pause none none'
             },
             x: -400,
@@ -149,13 +149,33 @@ const MailIcon: React.FC = () => {
         </div>
 )};
 
-const ResumeLink: React.FC = () => (
-  <Link href="/resume">
-    <div className="rounded-full shadow-3xl  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-      <BsFillPersonLinesFill />
-    </div>
-  </Link>
-);
+const ResumeLink: React.FC = () => {
+    const text = React.useRef(null);
+
+    React.useLayoutEffect( () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(text.current, {
+            scrollTrigger: {
+                trigger: text.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=300px bottom",
+                toggleActions: 'restart pause none none'
+            },
+            x: -400,
+            rotation: 920,
+            duration:3,
+            // opacity: 0,
+            // left: "-250px",
+        })
+    }, []);
+    return (
+        <Link href="/resume">
+            <div className="rounded-full shadow-3xl  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+            <BsFillPersonLinesFill />
+            </div>
+        </Link>
+)};
 
 const ContactForm: React.FC = () => {
   const {
