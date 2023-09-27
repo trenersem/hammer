@@ -115,7 +115,7 @@ const Snapping = () => {
             scrollTrigger: {
                 trigger: container.current,
                 pin: true,
-                start: "top-=200px",
+                start: "top-=100px",
                 scrub: 1,
                 snap: 1 / (sections.length - 1),
                 // base vertical scrolling on how wide the container is so it feels more natural.
@@ -137,11 +137,11 @@ const Snapping = () => {
     }, [])
     return (
         <div ref={container}>
-            <div className='flex flex-nowrap gap-6'>
+            <div className='flex flex-nowrap gap-6 overflow-hidden'>
                   {projects.map( (project, index) => {
                         return (
-                            <div key={index} className='panel flex justify-center items-center min-w-[100vw] h-[500px] rounded-lg'>
-                                <h2>{project.title}</h2>
+                            <div key={index} className='panel flex flex-col justify-center items-center min-w-[100vw] h-[500px] rounded-lg'>
+                                <Typography className='mb-4'>{project.title}</Typography>
                                 <div>
                                     <Image 
                                         src={`/images/${project.src}`}
