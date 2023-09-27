@@ -4,6 +4,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Typography from '../atoms/typography';
+import { detectMobile } from '@/app/utils/detect-mobile';
 
 const projects = [
     {
@@ -55,7 +56,7 @@ export default function Projects() {
             trigger: imageContainer.current,
             pin: true,
             start: "top-=100px",
-            end: `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight - 250}px`,
+            end: detectMobile() ?  "+=300px" : `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight - 250}px`,
         })
     }, [])
 
