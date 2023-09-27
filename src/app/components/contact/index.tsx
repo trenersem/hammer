@@ -130,11 +130,11 @@ const MailIcon: React.FC = () => {
             scrollTrigger: {
                 trigger: text.current,
                 scrub: true,
-                start: "bottom 10%",
-                end: "bottom 100px",
+                start: "0px bottom",
+               end: "bottom+=300px bottom",
                 toggleActions: 'restart pause none none'
             },
-            x: -200,
+            x: -400,
             rotation: 720,
             duration:3,
             // opacity: 0,
