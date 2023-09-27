@@ -4,6 +4,7 @@ import Intro from "./components/intro";
 import Description from "./components/description";
 import Projects from "./components/projects";
 import Header from "./components/header";
+import Contact from "./components/contact";
 
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
       <Intro />
       <Description />
       <Projects />
+      <Contact />
     </main>
   )
 }

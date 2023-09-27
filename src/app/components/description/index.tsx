@@ -31,44 +31,9 @@ const phrasesWithInfo = [
 ];
 
 export default function Description() {
-  const descriptionImage = React.useRef(null);
-
-    React.useLayoutEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: descriptionImage.current,
-                scrub: true,
-                start: "0px bottom",
-                end: "bottom+=500px",
-            }
-        })
-
-        timeline
-            .from(descriptionImage.current, {
-                bottom: '200%',
-                opacity: '0',
-                clipPath: 'inset(15%)'
-            })
-             .to(descriptionImage.current, {
-                bottom: 'unset',
-                opacity: '1',
-                clipPath: 'inset(0%)'
-            })
-
-    }, [])
 
   return (
     <div className={styles.description} >
-         {/* <div ref={descriptionImage} data-scroll data-scroll-speed="0.3" className={styles.descriptionImage}>
-            <Image
-                src={'/images/paint.avif'}
-                alt="intro image"
-                fill={true} 
-                priority={true}
-            />
-        </div> */}
         <div className={styles.list}>
             {
                 phrasesWithInfo.map((item, index) => {
@@ -98,7 +63,6 @@ function AnimatedText({icon, phrase, title} : {icon: React.ReactNode, phrase: st
         })
     }, [])
 
-    // return <p ref={text}>{children}</p>
     return (
         <div ref={text} className={styles.item}>
             <div className={styles.item__content}>
