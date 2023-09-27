@@ -136,19 +136,25 @@ const Snapping = () => {
     }, [])
     return (
         <div ref={container}>
-            <div className='flex flex-nowrap'>
-                <div className='panel bg-red-50 min-w-[100vw] h-[500px]'>
-                    1
-                </div>
-                <div className='panel bg-lime-200 min-w-[100vw] h-[500px]'>
-                    2
-                </div>
-                <div className='panel bg-yellow-600 min-w-[100vw] h-[500px]'>
-                    3
-                </div>
-                <div className='panel bg-slate-500 min-w-[100vw] h-[500px]'>
-                    3
-                </div>
+            <div className='flex flex-nowrap gap-6'>
+                  {projects.map( (project, index) => {
+                        return (
+                            <div key={index} className='panel flex justify-center items-center min-w-[100vw] h-[500px] rounded-lg'>
+                                <h2>{project.title}</h2>
+                                <div>
+                                    <Image 
+                                        src={`/images/${project.src}`}
+                                        fill={true}
+                                        alt="project image"
+                                        priority={true}
+                                        className='w-[250px] h-[100px] object-cover'
+                                    />
+                                </div>
+
+                            </div>
+                        )
+                    })
+                }
             </div>
         </div>
     )
