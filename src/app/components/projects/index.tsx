@@ -52,10 +52,11 @@ export default function Projects() {
     useLayoutEffect( () => {
         gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.create({
-            trigger: imageContainer.current,
+            trigger: container.current,
             pin: true,
             start: "top-=100px",
-            end: document.body.offsetHeight - window.innerHeight - 50,
+            // end: document.body.offsetHeight - window.innerHeight - 50,
+            end: "bottom",
         })
     }, [])
 
