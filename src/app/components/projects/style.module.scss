@@ -29,9 +29,13 @@
     position: relative;
     height: 80%;
     width: 50%;
+
      @media($media_mobile) {
+        max-height: 400px;
         height: 100%;
         width: 100%;
+        border-radius: 6px;
+        overflow: hidden;
     }
 }
 
@@ -67,6 +71,8 @@
     @media($media_mobile) {
          flex-direction: row;
          gap: 15px;
+         background-color: #2424249c;
+         border-radius: 6px;
          overflow: hidden;
          overflow-x: scroll;
     }
@@ -87,6 +93,9 @@
     margin-bottom: 20px;
     white-space: nowrap;
     cursor: default;
+     @media($media_mobile) {
+          margin-top: 20px;
+     }
 }
 
 
