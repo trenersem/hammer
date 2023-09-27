@@ -56,7 +56,7 @@ export default function Projects() {
             pin: true,
             markers: true,
             start: "top-=100px",
-            end: `+=${container.current!.offsetHeight}px`,
+            end: `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight}px`,
         })
     }, [])
 
