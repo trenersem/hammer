@@ -118,7 +118,7 @@ const Snapping = () => {
                 scrub: 1,
                 snap: 1 / (sections.length - 1),
                 // base vertical scrolling on how wide the container is so it feels more natural.
-                end: () => `+=` + container.current!.offsetWidth + 100,
+                end: () => `+=` + (container.current!.offsetWidth + 100),
             }
             });
         // gsap.from(text.current, {
