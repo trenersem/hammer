@@ -46,16 +46,17 @@ const projects = [
 export default function Projects() {
 
     const [selectedProject, setSelectedProject] = useState(0);
-    const container = useRef(null);
-    const imageContainer = useRef(null);
+    const container = useRef<HTMLDivElement | null>(null);
+    const imageContainer = useRef<HTMLDivElement | null>(null);
 
     useLayoutEffect( () => {
         gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.create({
-            trigger: container.current,
+            trigger: imageContainer.current,
             pin: true,
+            markers: true,
             start: "top-=100px",
-            end: document.body.offsetHeight,
+            end: `+=${container.current!.offsetHeight}px`,
         })
     }, [])
 
