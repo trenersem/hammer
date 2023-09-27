@@ -64,7 +64,7 @@ export default function Projects() {
             <Typography
                 tag='h2'
                 className={styles.title}
-                data-scroll data-scroll-speed="0.5"
+                data-scroll data-scroll-speed="-0.5"
             >
                 Our Services
             </Typography>
