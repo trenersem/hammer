@@ -55,7 +55,6 @@ export default function Projects() {
             pin: true,
             start: "top-=100px",
             end: document.body.offsetHeight - window.innerHeight - 50,
-            // end: container.current!.offsetHeight,
         })
     }, [])
 

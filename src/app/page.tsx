@@ -28,7 +28,7 @@ export default function Home() {
       <Intro />
       <Description />
       <Projects />
-      <Contact />
+      {/* <Contact /> */}
     </main>
   )
 }
