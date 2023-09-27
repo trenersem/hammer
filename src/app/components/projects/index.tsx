@@ -61,6 +61,13 @@ export default function Projects() {
 
     return (
         <div ref={container} className={styles.projects}>
+            <Typography
+                tag='h2'
+                className={styles.title}
+                data-scroll data-scroll-speed="0.3"
+            >
+                Our Services
+            </Typography>
             <div className={styles.projectDescription}>
                 <div ref={imageContainer} className={styles.imageContainer}>
                     <Image 
@@ -89,25 +96,6 @@ export default function Projects() {
                     })
                 }
             </div>
-            
-        {/* <div className={styles.swiper}>
-                    {  projects?.map((item: any, i: number) => (
-                        <ProjectSlide
-                            key={item.title}
-                            item={item}
-                        />
-                    ))}
-            </div> */}
-
         </div>
-    )
-}
-
-const ProjectSlide = ({item} : {item: any}) => {
-    return (
-    <div className={styles.card}>
-      <div className={styles.card__img} style={{ backgroundImage: `url(/images/${item.icon})` }}/>
-      <h3>{item?.title}</h3>
-    </div>
     )
 }

@@ -16,7 +16,7 @@ export default function Home() {
             smartphone: {
                 smooth: true,
             },
-          });
+          })
       }
     )()
   }, [])

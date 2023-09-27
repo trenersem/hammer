@@ -9,7 +9,6 @@
     @media($media_mobile) {
         padding: 15px;
     }
-
 }
 
 .projectDescription{
@@ -23,6 +22,10 @@
        justify-content: start;
     }
 
+}
+
+.title {
+    margin-bottom: 30px;
 }
 
 .imageContainer{
@@ -96,57 +99,4 @@
      @media($media_mobile) {
           margin-top: 20px;
      }
-}
-
-
-
-
-
-
-.swiper {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    overflow: hidden;
-    overflow-x: auto;
-     &::-webkit-scrollbar {
-        width: 0;
-    }
-
-    scrollbar-width: none;
-    &::-webkit-scrollbar-thumb {
-        display: none;
-        width: 0;
-    }
-    &::-webkit-scrollbar-track {
-        display: none;
-    }
-}
-.card {
-    background-color: var(--color-yellow);
-    padding: 10px;
-    border-radius: 6px;
-
-    &__img {
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-    } 
-  position: relative;
-  border-radius: 6px;
-  overflow: hidden;
-
-
-
-  @media (hover: hover) and (pointer: fine) {
-    &:hover::before {
-      opacity: 0.8;
-    }
-
-    &:hover .card_btn {
-      transform: translate(-50%, -50%) scale(1);
-    }
-  }
 }
