@@ -6,6 +6,8 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import Link from "next/link";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 type FormData = {
   name: string;
@@ -82,23 +84,70 @@ const ConnectWithUs: React.FC = () => (
   </div>
 );
 
-const LinkedinIcon: React.FC = () => (
-  <a
-    href="https://www.linkedin.com/in/volodymyr-semenov-872980224/"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <div className="rounded-full shadow-3xl  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-      <FaLinkedinIn />
-    </div>
-  </a>
-);
+const LinkedinIcon: React.FC = () => {
+    const text = React.useRef(null);
 
-const MailIcon: React.FC = () => (
-  <div className="rounded-full shadow-3xl  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-    <AiOutlineMail />
-  </div>
-);
+    React.useLayoutEffect( () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(text.current, {
+            scrollTrigger: {
+                trigger: text.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=300px bottom",
+                toggleActions: 'restart pause none none'
+            },
+            x: -400,
+            rotation: 360,
+            duration:3,
+            // opacity: 0,
+            // left: "-250px",
+        })
+    }, [])
+
+    return (
+        <div ref={text}>
+            <a
+                href="https://www.linkedin.com/in/volodymyr-semenov-872980224/"
+                target="_blank"
+                rel="noreferrer"
+            >
+                <div className="rounded-full shadow-3xl  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                <FaLinkedinIn />
+                </div>
+            </a>
+        </div>
+
+    );
+}
+
+const MailIcon: React.FC = () => {
+    const text = React.useRef(null);
+
+    React.useLayoutEffect( () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(text.current, {
+            scrollTrigger: {
+                trigger: text.current,
+                scrub: true,
+                start: "top 10%",
+                end: "bottom 100px",
+                toggleActions: 'restart pause none none'
+            },
+            x: -200,
+            rotation: 360,
+            duration:3,
+            // opacity: 0,
+            // left: "-250px",
+        })
+    }, [])
+    return (
+        <div ref={text}>
+            <div className="rounded-full shadow-3xl  bg-[#f3c600] p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                <AiOutlineMail />
+            </div>
+        </div>
+)};
 
 const ResumeLink: React.FC = () => (
   <Link href="/resume">
