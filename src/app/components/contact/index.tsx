@@ -94,7 +94,7 @@ const LinkedinIcon: React.FC = () => {
                 trigger: text.current,
                 scrub: true,
                 start: "0px bottom",
-                end: "bottom+=300px bottom",
+                end: "bottom+=200px bottom",
                 toggleActions: 'restart pause none none'
             },
             x: -400,
@@ -129,7 +129,7 @@ const MailIcon: React.FC = () => {
                 trigger: text.current,
                 scrub: true,
                 start: "0px bottom",
-                end: "bottom+=300px bottom",
+                end: "bottom+=200px bottom",
                 toggleActions: 'restart pause none none'
             },
             x: -400,
@@ -155,7 +155,7 @@ const ResumeLink: React.FC = () => {
                 trigger: text.current,
                 scrub: true,
                 start: "0px bottom",
-                end: "bottom+=400px bottom",
+                end: "bottom+=200px bottom",
                 toggleActions: 'restart pause none none'
             },
             x: -400,
