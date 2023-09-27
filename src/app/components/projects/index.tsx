@@ -55,7 +55,7 @@ export default function Projects() {
             trigger: imageContainer.current,
             pin: true,
             start: "top-=100px",
-            end: "bottom+=150px bottom",
+            end: "bottom+=750px bottom",
         })
     }, [])
 
