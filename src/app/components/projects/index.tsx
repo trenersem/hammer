@@ -87,7 +87,7 @@ export default function Projects() {
                         <Typography size='text-xs'>Some, like the southern viscacha, vicuña and Darwins rhea, are classified as endangered species. Others, such as Andean goose, horned coot, Andean gull, puna tinamou and the three flamingo species inhabiting in Chile (Andean flamingo, Chilean flamingo, and Jamess flamingo) are considered vulnerable.</Typography>
                     </div>
                 </div>
-
+                {width >= 768 && (
                     <div className={styles.projectList}>
                         {
                             projects.map( (project, index) => {
@@ -99,8 +99,9 @@ export default function Projects() {
                             })
                         }
                     </div>
+                )}
             </div>
-                 <Snapping />
+            <Snapping />
         </>
     )
 }
