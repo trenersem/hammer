@@ -126,12 +126,12 @@ const Snapping = () => {
     }, [])
     return (
         <div ref={container}>
-            <div className='flex flex-nowrap gap-6 overflow-hidden mr-5'>
+            <div className='flex flex-nowrap overflow-hidden'>
                   {projects.map( (project, index) => {
                         return (
-                            <div key={index} className='panel flex flex-col justify-center items-center min-w-[100vw] h-[500px] rounded-lg overflow-hidden'>
+                            <div key={index} className='panel flex flex-col justify-center items-center min-w-[100vw]'>
                                 <Typography className='mb-4'>{project.title}</Typography>
-                                <div>
+                                <div className='relative h-[50vh] rounded-lg overflow-hidden px-5'>
                                     <Image 
                                         src={`/images/${project.src}`}
                                         fill={true}
