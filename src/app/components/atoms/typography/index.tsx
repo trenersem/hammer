@@ -51,7 +51,7 @@ const Typography: ForwardRefRenderFunction<HTMLElement, TypographyPropsI> = (
                 [s[font]],
                 className,
             ),
-        [className, size, color, weight, align],
+        [size, color, weight, align, font, className],
     );
 
        
