@@ -71,14 +71,17 @@ export default function Projects() {
                     Our Services
                 </Typography>
                 <div className={styles.projectDescription}>
-                    <div ref={imageContainer} className={styles.imageContainer}>
-                        <Image 
-                            src={`/images/${projects[selectedProject].src}`}
-                            fill={true}
-                            alt="project image"
-                            priority={true}
-                        />
-                    </div>
+                    {!detectMobile() && (
+                        <div ref={imageContainer} className={styles.imageContainer}>
+                            <Image 
+                                src={`/images/${projects[selectedProject].src}`}
+                                fill={true}
+                                alt="project image"
+                                priority={true}
+                            />
+                        </div>
+                    )}
+                  
                     <div className={styles.column} data-scroll data-scroll-speed="0.3">
                         <Typography size='text-xs'>The flora is characterized by the presence of high elevation wetland, as well as yellow straw, broom sedge, tola de agua and tola amaia.</Typography>
                     </div>
@@ -86,20 +89,22 @@ export default function Projects() {
                         <Typography size='text-xs'>Some, like the southern viscacha, vicuña and Darwins rhea, are classified as endangered species. Others, such as Andean goose, horned coot, Andean gull, puna tinamou and the three flamingo species inhabiting in Chile (Andean flamingo, Chilean flamingo, and Jamess flamingo) are considered vulnerable.</Typography>
                     </div>
                 </div>
+                {!detectMobile() && (
+                    <div className={styles.projectList}>
+                        {
+                            projects.map( (project, index) => {
+                                return (
+                                    <div key={index} onMouseOver={() => {setSelectedProject(index)}} className={styles.projectEl}>
+                                        <h2>{project.title}</h2>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                )}
                 
-                <div className={styles.projectList}>
-                    {
-                        projects.map( (project, index) => {
-                            return (
-                                <div key={index} onMouseOver={() => {setSelectedProject(index)}} className={styles.projectEl}>
-                                    <h2>{project.title}</h2>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
             </div>
-            <Snapping />
+            {detectMobile() &&  <Snapping />}
         </>
     )
 }
@@ -131,7 +136,7 @@ const Snapping = () => {
                         return (
                             <div key={index} className='panel flex flex-col justify-center items-center min-w-[100vw]'>
                                 <Typography className='mb-4'>{project.title}</Typography>
-                                <div className='relative h-[50vh] w-[60vw] rounded-lg overflow-hidden px-5'>
+                                <div className='relative h-[50vh] w-[96vw] rounded-lg overflow-hidden px-5'>
                                     <Image 
                                         src={`/images/${project.src}`}
                                         fill={true}
