@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useState, useLayoutEffect, useRef } from 'react'
 import styles from './style.module.scss';
 import Image from 'next/image';
@@ -73,7 +71,7 @@ export default function Projects() {
                     Our Services
                 </Typography>
                 <div className={styles.projectDescription}>
-                    {window.innerWidth >=768 ? (
+                    {!detectMobile() ? (
                         <div ref={imageContainer} className={styles.imageContainer}>
                             <Image 
                                 src={`/images/${projects[selectedProject].src}`}
@@ -91,7 +89,7 @@ export default function Projects() {
                     </div>
                 </div>
 
-                {window.innerWidth >=768 ? (
+                {!detectMobile() ? (
                     <div className={styles.projectList}>
                         {
                             projects.map( (project, index) => {
@@ -105,7 +103,7 @@ export default function Projects() {
                     </div>
                 ) : <></>}
             </div>
-             {window.innerWidth <= 768 ? (
+             { detectMobile() ? (
                  <Snapping />
              ) : <></>}
         </>
