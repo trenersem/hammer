@@ -71,7 +71,7 @@ export default function Projects() {
                     Our Services
                 </Typography>
                 <div className={styles.projectDescription}>
-                    {window.innerWidth >=768 && (
+                    {window.innerWidth >=768 ? (
                         <div ref={imageContainer} className={styles.imageContainer}>
                             <Image 
                                 src={`/images/${projects[selectedProject].src}`}
@@ -80,7 +80,7 @@ export default function Projects() {
                                 priority={true}
                             />
                         </div>
-                    )}
+                    ) : <></>}
                     <div className={styles.column} data-scroll data-scroll-speed="0.3">
                         <Typography size='text-xs'>The flora is characterized by the presence of high elevation wetland, as well as yellow straw, broom sedge, tola de agua and tola amaia.</Typography>
                     </div>
@@ -89,7 +89,7 @@ export default function Projects() {
                     </div>
                 </div>
 
-                {window.innerWidth >=768 && (
+                {window.innerWidth >=768 ? (
                     <div className={styles.projectList}>
                         {
                             projects.map( (project, index) => {
@@ -101,9 +101,9 @@ export default function Projects() {
                             })
                         }
                     </div>
-                )}
+                ) : <></>}
             </div>
-             {window.innerWidth <= 768 && (
+             {window.innerWidth <= 768 ?? (
                  <Snapping />
              )}
         </>
