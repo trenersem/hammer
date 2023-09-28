@@ -49,7 +49,7 @@ export default function Projects() {
     const [selectedProject, setSelectedProject] = useState(0);
     const container = useRef<HTMLDivElement | null>(null);
     const imageContainer = useRef<HTMLDivElement | null>(null);
-
+    const [width, setWidth ]= React.useState(0);
     useLayoutEffect( () => {
         gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.create({
@@ -58,7 +58,8 @@ export default function Projects() {
             start: "top-=100px",
             end: detectMobile() ?  "+=300px" : `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight - 250}px`,
         })
-    }, [])
+        setWidth(window.innerWidth);
+    }, []);
 
     return (
         <>
@@ -71,7 +72,7 @@ export default function Projects() {
                     Our Services
                 </Typography>
                 <div className={styles.projectDescription}>
-                    {!detectMobile() ? (
+                    {width >=768 ? (
                         <div ref={imageContainer} className={styles.imageContainer}>
                             <Image 
                                 src={`/images/${projects[selectedProject].src}`}
@@ -89,7 +90,7 @@ export default function Projects() {
                     </div>
                 </div>
 
-                {!detectMobile() ? (
+                {width >=768 ? (
                     <div className={styles.projectList}>
                         {
                             projects.map( (project, index) => {
@@ -103,7 +104,7 @@ export default function Projects() {
                     </div>
                 ) : <></>}
             </div>
-             { detectMobile() ? (
+             {width <= 768 ? (
                  <Snapping />
              ) : <></>}
         </>
