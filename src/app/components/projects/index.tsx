@@ -51,14 +51,17 @@ export default function Projects() {
     const imageContainer = useRef<HTMLDivElement | null>(null);
     const [width, setWidth ]= React.useState(0);
     useLayoutEffect( () => {
-        gsap.registerPlugin(ScrollTrigger);
-        ScrollTrigger.create({
-            trigger: imageContainer.current,
-            pin: true,
-            start: "top-=100px",
-            end: detectMobile() ?  "+=300px" : `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight - 250}px`,
-        })
         setWidth(window.innerWidth);
+       if ( width >= 768) {
+           gsap.registerPlugin(ScrollTrigger);
+           ScrollTrigger.create({
+               trigger: imageContainer.current,
+               pin: true,
+               start: "top-=100px",
+               end: `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight - 250}px`,
+           })
+       }
+       
     }, []);
 
     return (
