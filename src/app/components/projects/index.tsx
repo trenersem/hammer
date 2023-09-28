@@ -104,6 +104,7 @@ export default function Projects() {
             </div>
              {width <= 768 ? (
                  <Snapping />
+                 
              ) : <></>}
         </>
     )
