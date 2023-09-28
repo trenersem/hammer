@@ -145,7 +145,6 @@ const Snapping = () => {
                                         className={`w-[250px] h-[100px] object-cover z-[-1] brightness-75`}
                                     />
                                 </div>
-
                             </div>
                         )
                     })
