@@ -88,7 +88,6 @@ export default function Projects() {
                     </div>
                 </div>
 
-                {width >=768 ? (
                     <div className={styles.projectList}>
                         {
                             projects.map( (project, index) => {
@@ -100,12 +99,8 @@ export default function Projects() {
                             })
                         }
                     </div>
-                ) : <></>}
             </div>
-             {width <= 768 ? (
                  <Snapping />
-                 
-             ) : <></>}
         </>
     )
 }
