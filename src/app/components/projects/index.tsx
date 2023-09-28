@@ -56,7 +56,7 @@ export default function Projects() {
             trigger: imageContainer.current,
             pin: true,
             start: "top-=100px",
-            end: detectMobile() ?  "+=300px" : `+=${container.current!.offsetHeight + 250}px`,
+            end: detectMobile() ?  "+=200px" : `+=${container.current!.offsetHeight + 200}px`,
         })
         setWidth(window.innerWidth);
     }, []);
