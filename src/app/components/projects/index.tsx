@@ -118,10 +118,9 @@ const Snapping = () => {
                 trigger: container.current,
                 pin: true,
                 start: "top-=100px",
-                end: "button button",
                 scrub: 1,
                 snap: 1 / (sections.length - 1),
-                end: () => `+=` + (container.current!.offsetWidth),
+                end: () => `+=` + (container.current!.offsetWidth + 24 * projects.length),
             }
             });
     }, [])
