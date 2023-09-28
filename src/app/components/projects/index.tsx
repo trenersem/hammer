@@ -56,7 +56,7 @@ export default function Projects() {
             trigger: imageContainer.current,
             pin: true,
             start: "top-=100px",
-            end: `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight - 250}px`,
+            end: `+=${container.current!.offsetHeight - 250}px`,
         })
         setWidth(window.innerWidth);
     }, []);
