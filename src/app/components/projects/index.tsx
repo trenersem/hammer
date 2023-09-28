@@ -118,24 +118,12 @@ const Snapping = () => {
                 trigger: container.current,
                 pin: true,
                 start: "top-=100px",
+                end: "button button",
                 scrub: 1,
                 snap: 1 / (sections.length - 1),
-                // base vertical scrolling on how wide the container is so it feels more natural.
-                end: () => `+=` + (container.current!.offsetWidth + 400),
+                end: () => `+=` + (container.current!.offsetWidth),
             }
             });
-        // gsap.from(text.current, {
-        //     scrollTrigger: {
-        //         trigger: text.current,
-        //         scrub: 3,
-        //         start: "0px bottom",
-        //         end: "bottom+=200px bottom",
-        //         toggleActions: 'restart pause none none'
-        //     },
-        //     x: -400,
-        //     rotation: 720,
-        //     duration:3,
-        // })
     }, [])
     return (
         <div ref={container}>
