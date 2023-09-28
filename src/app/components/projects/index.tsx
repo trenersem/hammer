@@ -51,17 +51,14 @@ export default function Projects() {
     const imageContainer = useRef<HTMLDivElement | null>(null);
     const [width, setWidth ]= React.useState(0);
     useLayoutEffect( () => {
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.create({
+            trigger: imageContainer.current,
+            pin: true,
+            start: "top-=100px",
+            end: `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight - 250}px`,
+        })
         setWidth(window.innerWidth);
-       if ( width >= 768) {
-           gsap.registerPlugin(ScrollTrigger);
-           ScrollTrigger.create({
-               trigger: imageContainer.current,
-               pin: true,
-               start: "top-=100px",
-               end: `+=${container.current!.offsetHeight - imageContainer.current!.offsetHeight - 250}px`,
-           })
-       }
-       
     }, []);
 
     return (
@@ -75,7 +72,6 @@ export default function Projects() {
                     Our Services
                 </Typography>
                 <div className={styles.projectDescription}>
-                    {width >=768 ? (
                         <div ref={imageContainer} className={styles.imageContainer}>
                             <Image 
                                 src={`/images/${projects[selectedProject].src}`}
@@ -84,7 +80,6 @@ export default function Projects() {
                                 priority={true}
                             />
                         </div>
-                    ) : <></>}
                     <div className={styles.column} data-scroll data-scroll-speed="0.3">
                         <Typography size='text-xs'>The flora is characterized by the presence of high elevation wetland, as well as yellow straw, broom sedge, tola de agua and tola amaia.</Typography>
                     </div>
