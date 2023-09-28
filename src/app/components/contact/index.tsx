@@ -98,6 +98,7 @@ const LinkedinIcon: React.FC = () => {
                 toggleActions: 'restart pause none none'
             },
             x: -400,
+            opacity: 0,
             rotation: 360,
             duration:3,
         })
@@ -133,6 +134,7 @@ const MailIcon: React.FC = () => {
                 toggleActions: 'restart pause none none'
             },
             x: -400,
+            opacity: 0,
             rotation: 720,
             duration:3,
         })
@@ -160,6 +162,7 @@ const ResumeLink: React.FC = () => {
             },
             x: -400,
             rotation: 920,
+            opacity: 0,
             duration:3,
         })
     }, []);

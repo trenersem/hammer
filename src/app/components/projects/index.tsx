@@ -131,7 +131,7 @@ const Snapping = () => {
                         return (
                             <div key={index} className='panel flex flex-col justify-center items-center min-w-[100vw]'>
                                 <Typography className='mb-4'>{project.title}</Typography>
-                                <div className='relative h-[50vh] rounded-lg overflow-hidden px-5'>
+                                <div className='relative h-[50vh] w-[60vw] rounded-lg overflow-hidden px-5'>
                                     <Image 
                                         src={`/images/${project.src}`}
                                         fill={true}
