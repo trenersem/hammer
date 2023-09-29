@@ -33,12 +33,12 @@
     position: relative;
     height: 80%;
     width: 50%;
+    border-radius: 6px;
 
      @media($media_mobile) {
         max-height: 400px;
         height: 100%;
         width: 100%;
-        border-radius: 6px;
         overflow: hidden;
     }
 }
