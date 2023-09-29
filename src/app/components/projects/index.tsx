@@ -57,7 +57,7 @@ export default function Projects() {
             pin: true,
             scrub: 3,
             start: "top-=100px",
-            end: detectMobile() ?  "+=80px" : `+=${container.current!.offsetHeight + 200}px`,
+            end: detectMobile() ?  "+=80px" : `+=${container.current!.offsetHeight + 400}px`,
         })
         setWidth(window.innerWidth);
     }, []);
