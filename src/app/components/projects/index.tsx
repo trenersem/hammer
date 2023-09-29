@@ -55,8 +55,9 @@ export default function Projects() {
         ScrollTrigger.create({
             trigger: imageContainer.current,
             pin: true,
+            scrub: 3,
             start: "top-=100px",
-            end: detectMobile() ?  "+=100px" : `+=${container.current!.offsetHeight + 200}px`,
+            end: detectMobile() ?  "+=80px" : `+=${container.current!.offsetHeight + 200}px`,
         })
         setWidth(window.innerWidth);
     }, []);

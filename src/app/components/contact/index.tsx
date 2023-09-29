@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
 
 const ContactHeader: React.FC = () => (
   <>
-    <Typography className="text-xl tracking-widest uppercase text-[#ffffff]">
+    <Typography className="text-xl tracking-widest uppercase text-[#ffffff] mt-6">
       Contact
     </Typography>
     <Typography className="py-4" size="text-s">
