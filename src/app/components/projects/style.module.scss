@@ -34,6 +34,7 @@
     height: 80%;
     width: 50%;
     border-radius: 6px;
+    overflow: hidden;
 
      @media($media_mobile) {
         max-height: 400px;

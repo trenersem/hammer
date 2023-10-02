@@ -10,36 +10,44 @@ const projects = [
     {
         title: "Demolition",
         src: "test-2.avif",
-        icon: 'plumbing.png'
+        icon: 'plumbing.png',
+        description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
     },
     {
         title: "ODD Jobs",
         src: "image-2.avif",
-         icon: 'plumbing.png'
+        icon: 'plumbing.png',
+         description: '@Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
     },
     {
         title: "Painting",
         src: "paint.avif",
-         icon: 'plumbing.png'
+        icon: 'plumbing.png',
+        description: '4Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
     },
     {
         title: "Makeovers",
         src: "image-4.avif",
-         icon: 'plumbing.png'
+        icon: 'plumbing.png',
+        description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt4',
     },
     {
         title: "Electrical",
         src: "image-3.avif",
-        icon: 'plumbing.png'
+        icon: 'plumbing.png',
+        description: 'Excepteur sint occaecedccccat cupidatat non proident, sunt in culpa qui officia deserunt',
     },
     {
         title: "Plumbing",
         src: "backgraund.avif",
-        icon: 'plumbing.png'
+        icon: 'plumbing.png',
+        description: '$$$$Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
     },
     {
         title: "Installation",
-        src: "image-5.avif"
+        src: "image-5.avif",
+        icon: 'plumbing.png',
+        description: '$$$Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
     },
 
 ]
@@ -72,18 +80,23 @@ export default function Projects() {
                 <Typography
                     tag='h2'
                     className={styles.title}
-                    // data-scroll data-scroll-speed="0.3"
+                    size='text-l'
                 >
                     Our Services
                 </Typography>
                 <div className={styles.projectDescription}>
-                        <div ref={imageContainer} className={styles.imageContainer}>
-                            <Image 
-                                src={`/images/${projects[selectedProject].src}`}
-                                fill={true}
-                                alt="project image"
-                                priority={true}
-                            />
+                        <div>
+                            <div ref={imageContainer} className={styles.imageContainer}>
+                                <Image 
+                                    src={`/images/${projects[selectedProject].src}`}
+                                    fill={true}
+                                    alt="project image"
+                                    priority={true}
+                                />
+                            </div>
+                            <Typography>
+                                    {projects[selectedProject].description}
+                            </Typography>
                         </div>
                     <div className={styles.column} data-scroll data-scroll-speed="0.3">
                         <Typography size='text-xs'>The flora is characterized by the presence of high elevation wetland, as well as yellow straw, broom sedge, tola de agua and tola amaia.</Typography>
@@ -118,7 +131,6 @@ const Snapping = () => {
 
      React.useLayoutEffect( () => {
         if(window && window.innerWidth <= 768) {
-
             gsap.registerPlugin(ScrollTrigger);
     
             let sections = gsap.utils.toArray(".panel");
