@@ -69,7 +69,7 @@ const ContactInfo: React.FC = () => (
   <div>
     <div className="relative h-[255px] lg:h-[315px]">
         <Image
-            className="rounded-xl hover:scale-105 ease-in duration-300 object-cover object-bottom"
+            className="rounded-xl object-cover object-bottom"
             src='./images/contact.jpeg'
             alt="/"
             fill={true}
@@ -315,7 +315,7 @@ const BackToTopButton: React.FC = () => {
             onClick={scrollToTop}
             className="rounded-full shadow-3xl p-4 cursor-pointer hover:scale-110 ease-in duration-300"
         >
-                <HiOutlineChevronDoubleUp className="text-[#5651e5]" size={30} />
+                <HiOutlineChevronDoubleUp className="text-[#f3c600]" size={30} />
         </div>
     )
 };

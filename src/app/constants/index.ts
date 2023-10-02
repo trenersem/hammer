@@ -1,4 +1,36 @@
 import { facebook, instagram, linkedin, twitter } from "../../../public/icons";
+import { FaBrain } from 'react-icons/fa';
+import { IoMdSettings } from 'react-icons/io';
+import { BsFillPeopleFill } from 'react-icons/bs';
+import { IconType } from "react-icons";
+
+interface PhraseInfo {
+  Icon: IconType;
+  phrases: string;
+  title: string;
+  id: number;
+}
+
+export const phrasesWithInfo: PhraseInfo[] = [
+  {
+    Icon: FaBrain,
+    phrases: "We are the team of highly professional technician with an average 15 years of experience in the field.",
+    title: "Experienced",
+    id: 1
+  },
+  {
+    Icon: IoMdSettings,
+    phrases: "Our technicians are experienced with a variety of skills in different fields and get work done.",
+    title: "Trustworthy",
+    id: 2
+  },
+  {
+    Icon: BsFillPeopleFill,
+    phrases: "At FixIt Handyman we offer an exceptional service and high-quality workmanship which is",
+    title: "Reliable",
+    id: 3
+  }
+];
 
 export const footerLinks = [
   {
