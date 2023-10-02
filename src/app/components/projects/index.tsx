@@ -121,7 +121,7 @@ const Snapping = () => {
                 trigger: container.current,
                 pin: true,
                 start: "top-=100px",
-                scrub: 5,
+                scrub: 0.1,
                 snap: 1 / (sections.length - 1),
                 end: () => `+=` + (container.current!.offsetWidth + 24 * projects.length),
             }
