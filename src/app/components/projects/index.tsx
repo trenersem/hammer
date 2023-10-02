@@ -10,7 +10,7 @@ const projects = [
     {
         title: "Demolition",
         src: "test-2.avif",
-         icon: 'plumbing.png'
+        icon: 'plumbing.png'
     },
     {
         title: "ODD Jobs",

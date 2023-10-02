@@ -67,7 +67,7 @@ const ContactRight: React.FC = () => (
 
 const ContactInfo: React.FC = () => (
   <div>
-    <div className="relative h-[415px] lg:h-[315px]">
+    <div className="relative h-[255px] lg:h-[315px]">
         <Image
             className="rounded-xl hover:scale-105 ease-in duration-300 object-cover object-bottom"
             src='./images/contact.jpeg'
@@ -276,7 +276,7 @@ const FormField: React.FC<{
   textarea?: boolean;
   errors: any;
 }> = ({ label, name, register, required, maxLength, pattern, textarea, errors }) => (
-  <div className={`flex flex-col py-2 ${textarea && 'col-span-2'}`}>
+  <div className={`flex flex-col py-2 ${textarea && 'md:col-span-2'}`}>
     <Typography tag="label" className="uppercase text-sm py-2" size="text-xs">
       {label}
     </Typography>
