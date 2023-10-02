@@ -102,7 +102,9 @@ export default function Projects() {
                     </div>
                 )}
             </div>
-            <Snapping />
+            {window.innerWidth <= 768 && (
+                <Snapping />
+            )}
         </>
     )
 }
