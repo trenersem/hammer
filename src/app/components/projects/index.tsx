@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useRef } from 'react'
+import React from 'react'
 import styles from './style.module.scss';
 import Image from 'next/image';
 import gsap from 'gsap';
@@ -46,11 +46,16 @@ const projects = [
 
 export default function Projects() {
 
-    const [selectedProject, setSelectedProject] = useState(0);
-    const container = useRef<HTMLDivElement | null>(null);
-    const imageContainer = useRef<HTMLDivElement | null>(null);
+    const [selectedProject, setSelectedProject] = React.useState(0);
+    const container = React.useRef<HTMLDivElement | null>(null);
+    const imageContainer = React.useRef<HTMLDivElement | null>(null);
     const [width, setWidth ]= React.useState(0);
-    useLayoutEffect( () => {
+
+    React.useEffect(() => {
+        setWidth(window.innerWidth);
+    }, []);
+
+    React.useLayoutEffect( () => {
         gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.create({
             trigger: imageContainer.current,
@@ -59,7 +64,6 @@ export default function Projects() {
             start: "top-=100px",
             end: detectMobile() ?  "+=80px" : `+=${container.current!.offsetHeight + 400}px`,
         })
-        setWidth(window.innerWidth);
     }, []);
 
     return (
@@ -110,24 +114,28 @@ export default function Projects() {
 }
 
 const Snapping = () => {
-    const container = useRef<HTMLDivElement | null>(null);
+    const container = React.useRef<HTMLDivElement | null>(null);
 
      React.useLayoutEffect( () => {
-        gsap.registerPlugin(ScrollTrigger);
+        if(window && window.innerWidth <= 768) {
 
-        let sections = gsap.utils.toArray(".panel");
-        gsap.to(sections, {
-            xPercent: -100 * (sections.length - 1),
-            ease: "none",
-            scrollTrigger: {
-                trigger: container.current,
-                pin: true,
-                start: "top-=100px",
-                scrub: 0.1,
-                snap: 1 / (sections.length - 1),
-                end: () => `+=` + (container.current!.offsetWidth + 24 * projects.length),
-            }
-            });
+            gsap.registerPlugin(ScrollTrigger);
+    
+            let sections = gsap.utils.toArray(".panel");
+            gsap.to(sections, {
+                xPercent: -100 * (sections.length - 1),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: container.current,
+                    pin: true,
+                    start: "top-=100px",
+                    scrub: 0.1,
+                    snap: 1 / (sections.length - 1),
+                    end: () => `+=` + (container.current ? container.current.offsetWidth + 24 * projects.length : 0),
+    
+                }
+                });
+        }
     }, [])
     return (
         <div ref={container}>
