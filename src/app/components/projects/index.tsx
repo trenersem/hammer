@@ -86,7 +86,7 @@ export default function Projects() {
                 </Typography>
                 <div className={styles.projectDescription}>
                         <div ref={imageContainer} className={styles.imageContainer}>
-                           <div className='relative w-[100%] h-[520px] mb-5 rounded-lg overflow-hidden'>
+                           <div className='relative w-[100%] h-[470px] mb-5 rounded-lg overflow-hidden'>
                                 <Image 
                                     src={`/images/${projects[selectedProject].src}`}
                                     fill={true}
@@ -94,7 +94,7 @@ export default function Projects() {
                                     priority={true}
                                 />
                            </div>
-                            <Typography size='text-m'>
+                            <Typography size='text-s'>
                                     {projects[selectedProject].description}
                             </Typography>
                         </div>
