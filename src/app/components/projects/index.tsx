@@ -85,16 +85,16 @@ export default function Projects() {
                     Our Services
                 </Typography>
                 <div className={styles.projectDescription}>
-                        <div>
-                            <div ref={imageContainer} className={styles.imageContainer}>
+                        <div ref={imageContainer} className={styles.imageContainer}>
+                           <div className='relative w-[100%] h-[520px] mb-5 rounded-lg overflow-hidden'>
                                 <Image 
                                     src={`/images/${projects[selectedProject].src}`}
                                     fill={true}
                                     alt="project image"
                                     priority={true}
                                 />
-                            </div>
-                            <Typography>
+                           </div>
+                            <Typography size='text-m'>
                                     {projects[selectedProject].description}
                             </Typography>
                         </div>
