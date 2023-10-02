@@ -6,6 +6,7 @@ import Description from "./components/description";
 import Projects from "./components/projects";
 import Header from "./components/header";
 import Contact from "./components/contact";
+import Footer from "./components/footer";
 
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
       <Description />
       <Projects />
       <Contact />
+      <Footer />
     </main>
   )
 }

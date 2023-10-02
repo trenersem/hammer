@@ -8,6 +8,7 @@ import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 type FormData = {
   name: string;
@@ -66,6 +67,14 @@ const ContactRight: React.FC = () => (
 
 const ContactInfo: React.FC = () => (
   <div>
+    <div className="relative h-[415px] lg:h-[315px]">
+        <Image
+            className="rounded-xl hover:scale-105 ease-in duration-300 object-cover object-bottom"
+            src='./images/contact.jpeg'
+            alt="/"
+            fill={true}
+        />
+    </div>
     <Typography className="py-2">Semenov Volodymyr</Typography>
     <Typography className="py-4" size="text-s">
       Email us using our simple form and we&apos;ll respond within 10 working days.
@@ -188,8 +197,6 @@ const ContactForm: React.FC = () => {
     if (!isValid) {
       return;
     }
-    // Отримання даних та відправка форми
-    // Наприклад, можна використовувати fetch або axios для відправки даних
   };
 
   return (
@@ -269,7 +276,7 @@ const FormField: React.FC<{
   textarea?: boolean;
   errors: any;
 }> = ({ label, name, register, required, maxLength, pattern, textarea, errors }) => (
-  <div className="flex flex-col py-2">
+  <div className={`flex flex-col py-2 ${textarea && 'col-span-2'}`}>
     <Typography tag="label" className="uppercase text-sm py-2" size="text-xs">
       {label}
     </Typography>
