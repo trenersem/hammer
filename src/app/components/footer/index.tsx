@@ -11,7 +11,7 @@ const Footer = () => (
             <div className="flex flex-[1] flex-col justify-start mr-10">
                 {/* <img src={logo} alt="hoobank" className="w-[266px] h-[72px] object-contain" /> */}
                 <Logo />
-                <Typography className={`mt-4 max-w-[312px]`} size='text-s'>
+                <Typography className={`mt-2 max-w-[312px]`} size='text-s'>
                      Home improvements just got easier
                 </Typography>
                 <div className='mt-[auto]'/>

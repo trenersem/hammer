@@ -93,6 +93,7 @@ export default function Projects() {
                                     fill={true}
                                     alt="project image"
                                     priority={true}
+                                    className='object-cover object-right'
                                 />
                             ) : (
                                 <Image 
