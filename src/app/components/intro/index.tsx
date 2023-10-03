@@ -52,7 +52,7 @@ const Intro = () => {
                     <button
                         className="w-full md:max-w-xs max-w-[250px] md:p-4 p-2 self-center text-black mt-4 bg-[#f3c600] rounded-xl hover:bg-[#f3c900] hover:text-white ease-in-out duration-75 "
                         type="button"
-                        data-scroll data-scroll-speed="3"
+                        data-scroll data-scroll-speed="-0.45"
                     >
                         Schedule Appoinment
                     </button>
