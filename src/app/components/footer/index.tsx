@@ -8,12 +8,28 @@ const Footer = () => (
       <div className="max-w-[1240px] m-auto px-4 py-4 w-full">
         <div className={`flex justify-start flex-col`}>
             <div className={`flex justify-start md:flex-row flex-col mb-8 w-full`}>
-            <div className="flex-[1] flex-col justify-start mr-10">
+            <div className="flex flex-[1] flex-col justify-start mr-10">
                 {/* <img src={logo} alt="hoobank" className="w-[266px] h-[72px] object-contain" /> */}
                 <Logo />
                 <Typography className={`mt-4 max-w-[312px]`} size='text-s'>
                      Home improvements just got easier
                 </Typography>
+                <div className='mt-[auto]'/>
+                <Typography
+                    size='text-s'
+                    tag='a'
+                    href='tel:+17542751268'
+                    className='mt-6  text-[#f3c600]'
+                >
+                    <span className=' text-[#f3c600]'>
+                      754.275.1268
+                    </span>
+                </Typography>
+                <Typography size='text-xs' weight='semibold' tag='div'>
+                     Call Us 24/7
+                </Typography>
+
+                
             </div>
 
             <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">

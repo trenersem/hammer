@@ -11,46 +11,46 @@ const projects = [
         title: "Demolition",
         src: "test-2.avif",
         icon: 'plumbing.png',
-        description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
+        description: 'Our demolition services are carried out with precision and safety in mind. We specialize in removing structures efficiently while minimizing disruption to your surroundings. Trust us to clear the way for your new beginnings.',
     },
     {
         title: "ODD Jobs",
         src: "image-2.avif",
         icon: 'plumbing.png',
-         description: '@Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
+         description: 'Have odd jobs that need attention? We’ve got you covered. Our team excels in handling various tasks around your property, from repairs to installations. Let us take care of the small details so you can focus on what matters most.',
     },
     {
         title: "Painting",
         src: "paint.avif",
         icon: 'plumbing.png',
-        description: '4Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
+        description: 'Transform your space with our expert painting services. Whether you need a fresh coat of paint or a complete color overhaul, our skilled painters ensure a flawless finish. Elevate the aesthetic appeal of your property with our painting solutions.',
     },
     {
         title: "Makeovers",
         src: "image-4.avif",
         icon: 'plumbing.png',
-        description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt4',
+        description: 'Give your property a makeover that reflects your style. Our makeover services include interior and exterior transformations. Experience a revitalized and appealing space that meets your vision and lifestyle.',
     },
     {
         title: "Electrical",
         src: "image-3.avif",
         icon: 'plumbing.png',
-        description: 'Excepteur sint occaecedccccat cupidatat non proident, sunt in culpa qui officia deserunt',
+        description: 'Electrical projects require precision and expertise. Our team is equipped to handle all your electrical needs, from installations to repairs. Safety and reliability are our top priorities when dealing with electrical systems.',
     },
     {
         title: "Plumbing",
         src: "backgraund.avif",
         icon: 'plumbing.png',
-        description: '$$$$Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
+        description: 'When it comes to plumbing, we have the experience to address any issue. From fixing leaks to installing new fixtures, our plumbing services are efficient and reliable. Count on us to keep your water systems in top condition.',
     },
     {
         title: "Installation",
         src: "image-5.avif",
         icon: 'plumbing.png',
-        description: '$$$Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt',
+        description: 'Installation projects require attention to detail. Our team specializes in installing various components and systems to enhance your property. Experience hassle-free and professional installations with our services.',
     },
+];
 
-]
 
 export default function Projects() {
 
@@ -99,10 +99,14 @@ export default function Projects() {
                             </Typography>
                         </div>
                     <div className={styles.column} data-scroll data-scroll-speed="0.3">
-                        <Typography size='text-xs'>The flora is characterized by the presence of high elevation wetland, as well as yellow straw, broom sedge, tola de agua and tola amaia.</Typography>
+                        <Typography size='text-s'>
+                            At our company, we&apos;re your trusted partner in the world of repairs and renovations. We specialize in creating beauty and comfort in your home. Our services span a wide spectrum, including interior and exterior remodeling, painting, fence installation, and a variety of handyman services.
+                        </Typography>
                     </div>
                     <div className={styles.column} data-scroll data-scroll-speed="0.3">
-                        <Typography size='text-xs'>Some, like the southern viscacha, vicuña and Darwins rhea, are classified as endangered species. Others, such as Andean goose, horned coot, Andean gull, puna tinamou and the three flamingo species inhabiting in Chile (Andean flamingo, Chilean flamingo, and Jamess flamingo) are considered vulnerable.</Typography>
+                        <Typography size='text-s'>
+                            Our team of experienced professionals is always ready to bring your ideas to life. We strive for the highest standards of quality in every project and put in the utmost effort to ensure you receive an excellent result. When you entrust us with your tasks, you not only get a professional approach but also confidence in our ability to get things done right. Make your life better by choosing our company for your remodeling and construction projects.
+                        </Typography>
                     </div>
                 </div>
                 {width >= 768 && (
