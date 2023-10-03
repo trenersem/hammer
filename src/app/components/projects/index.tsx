@@ -72,7 +72,7 @@ export default function Projects() {
                 pin: true,
                 scrub: 3,
                 start: "top-=50px",
-                end: `+=${container.current!.offsetHeight + 400}px`,
+                end: `+=${container.current!.offsetHeight + 800}px`,
             })
         }
     }, []);
