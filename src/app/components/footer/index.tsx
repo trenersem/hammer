@@ -1,6 +1,7 @@
 import { footerLinks, socialMedia } from '@/app/constants';
 import Typography from '../atoms/typography';
 import Image from 'next/image';
+import Logo from '../atoms/logo';
 
 const Footer = () => (
      <footer id="footer" className="w-full max-w-[100wv]">
@@ -9,9 +10,9 @@ const Footer = () => (
             <div className={`flex justify-start md:flex-row flex-col mb-8 w-full`}>
             <div className="flex-[1] flex-col justify-start mr-10">
                 {/* <img src={logo} alt="hoobank" className="w-[266px] h-[72px] object-contain" /> */}
-                <Typography>LOGO</Typography>
+                <Logo />
                 <Typography className={`mt-4 max-w-[312px]`} size='text-s'>
-                A new way to make the payments easy, reliable and secure.
+                     Home improvements just got easier
                 </Typography>
             </div>
 

@@ -11,12 +11,14 @@ export default function Description() {
 
   return (
     <div className={styles.description} >
-        <div className={styles.list}>
-            {
-                phrasesWithInfo.map(({Icon, phrases, title}, index) => {
-                    return <AnimatedText key={index} icon={<Icon/>} phrase={phrases} title={title} />
-                })
-            }
+        <div className="max-w-[1240px] m-auto px-4 py-4 w-full">
+          <div className={styles.list}>
+              {
+                  phrasesWithInfo.map(({Icon, phrases, title}, index) => {
+                      return <AnimatedText key={index} icon={<Icon/>} phrase={phrases} title={title} />
+                  })
+              }
+          </div>
         </div>
     </div>
   )

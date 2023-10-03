@@ -2,11 +2,10 @@
 
 .description{
     position: relative;
-    color: white;
-    font-size: 2vw;
     margin-top: 10vw;
     margin-left: 0 5vw;
     box-shadow: 0px -159px 63px 1px rgba(0,0,0,0.86);
+    background-color: #2424249c;
 
     @media ($media_mobile) {
          margin-top: 20vw;
@@ -17,7 +16,7 @@
     width: 100%;
     align-items: flex-start;
     justify-content: space-around;
-    background-color: #2424249c;
+
     gap: 20px;
     @media ($media_mobile) {
         flex-direction: column;

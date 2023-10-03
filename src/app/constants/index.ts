@@ -65,14 +65,6 @@ export const footerLinks = [
         name: 'Partners',
         link: 'https://www.hoobank.com/partners/',
       },
-      {
-        name: 'Blog',
-        link: 'https://www.hoobank.com/blog/',
-      },
-      {
-        name: 'Newsletters',
-        link: 'https://www.hoobank.com/newsletters/',
-      },
     ],
   },
 ];
