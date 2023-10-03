@@ -70,7 +70,7 @@ export default function Projects() {
             pin: true,
             scrub: 3,
             start: "top-=50px",
-            end: detectMobile() ?  "+=80px" : `+=${container.current!.offsetHeight + 400}px`,
+            end: detectMobile() ?  "0px" : `+=${container.current!.offsetHeight + 400}px`,
         })
     }, []);
 
@@ -87,24 +87,34 @@ export default function Projects() {
                 <div className={styles.projectDescription}>
                         <div ref={imageContainer} className={styles.imageContainer}>
                            <div className='relative w-[100%] h-[470px] mb-5 rounded-lg overflow-hidden'>
+                            {width <= 768 ? (
+                                <Image 
+                                    src={`/images/about.avif`}
+                                    fill={true}
+                                    alt="project image"
+                                    priority={true}
+                                />
+                            ) : (
                                 <Image 
                                     src={`/images/${projects[selectedProject].src}`}
                                     fill={true}
                                     alt="project image"
                                     priority={true}
                                 />
+                            ) }
+                                
                            </div>
                             <Typography size='text-s'>
                                     {projects[selectedProject].description}
                             </Typography>
                         </div>
                     <div className={styles.column} data-scroll data-scroll-speed="0.3">
-                        <Typography size='text-s'>
+                        <Typography size='text-xs'>
                             At our company, we&apos;re your trusted partner in the world of repairs and renovations. We specialize in creating beauty and comfort in your home. Our services span a wide spectrum, including interior and exterior remodeling, painting, fence installation, and a variety of handyman services.
                         </Typography>
                     </div>
                     <div className={styles.column} data-scroll data-scroll-speed="0.3">
-                        <Typography size='text-s'>
+                        <Typography size='text-xs'>
                             Our team of experienced professionals is always ready to bring your ideas to life. We strive for the highest standards of quality in every project and put in the utmost effort to ensure you receive an excellent result. When you entrust us with your tasks, you not only get a professional approach but also confidence in our ability to get things done right. Make your life better by choosing our company for your remodeling and construction projects.
                         </Typography>
                     </div>

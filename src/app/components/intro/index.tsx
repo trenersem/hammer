@@ -50,7 +50,7 @@ const Intro = () => {
                      <Typography tag='h1' size='text-l' data-scroll data-scroll-speed="-0.3">Home Improvements Just Got Easier</Typography>
                      <Typography tag='h2' size='text-m' data-scroll data-scroll-speed="-0.3">Service You Can Trust</Typography>
                     <button
-                        className="w-full max-w-xs p-4 self-center text-black mt-4 bg-[#f3c600] rounded-xl hover:bg-[#f3c900] hover:text-white ease-in-out duration-75 "
+                        className="w-full md:max-w-xs max-w-[250px] md:p-4 p-2 self-center text-black mt-4 bg-[#f3c600] rounded-xl hover:bg-[#f3c900] hover:text-white ease-in-out duration-75 "
                         type="button"
                         data-scroll data-scroll-speed="3"
                     >
