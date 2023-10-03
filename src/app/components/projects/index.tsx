@@ -64,14 +64,17 @@ export default function Projects() {
     }, []);
 
     React.useLayoutEffect( () => {
-        gsap.registerPlugin(ScrollTrigger);
-        ScrollTrigger.create({
-            trigger: imageContainer.current,
-            pin: true,
-            scrub: 3,
-            start: "top-=50px",
-            end: detectMobile() ?  "0px" : `+=${container.current!.offsetHeight + 400}px`,
-        })
+
+        if(!detectMobile()) {
+            gsap.registerPlugin(ScrollTrigger);
+            ScrollTrigger.create({
+                trigger: imageContainer.current,
+                pin: true,
+                scrub: 3,
+                start: "top-=50px",
+                end: `+=${container.current!.offsetHeight + 400}px`,
+            })
+        }
     }, []);
 
     return (
@@ -166,7 +169,7 @@ const Snapping = () => {
     }, [])
     return (
         <div ref={container}>
-            <div className='flex flex-nowrap overflow-hidden w-full mt-8'>
+            <div className='flex flex-nowrap overflow-hidden w-full mt-10'>
                   {projects.map( (project, index) => {
                         return (
                             <div key={index} className='panel flex flex-col justify-center items-center min-w-[100vw]'>
