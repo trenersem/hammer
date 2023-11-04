@@ -29,7 +29,7 @@ function DesktopProjects() {
                 pin: true,
                 scrub: 3,
                 start: "top-=50px",
-                end: `+=${container.current!.offsetHeight - 750}px`,
+                end: `+=${container.current!.offsetHeight - 780}px`,
         //     }
         })
         // }
@@ -54,7 +54,7 @@ function DesktopProjects() {
                                 priority={true}
                             />
                     </div>
-                        <Typography size='text-s' className=' pb-16'>
+                        <Typography size='text-s' className=' pb-24'>
                                 {projects[selectedProject].description}
                         </Typography>
                     </div>
