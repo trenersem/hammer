@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import styles from './style.module.scss';
 import Image from 'next/image';
@@ -28,7 +26,8 @@ export default function Projects() {
                 pin: true,
                 scrub: 3,
                 start: "top-=50px",
-                end: `+=${container.current!.offsetHeight + 900}px`,
+                end: `+=${container.current!.offsetHeight + 400}px`,
+              
             })
         }
     }, []);
@@ -78,20 +77,20 @@ export default function Projects() {
                             Our team of experienced professionals is always ready to bring your ideas to life. We strive for the highest standards of quality in every project and put in the utmost effort to ensure you receive an excellent result. When you entrust us with your tasks, you not only get a professional approach but also confidence in our ability to get things done right. Make your life better by choosing our company for your remodeling and construction projects.
                         </Typography>
                     </div>
-                    {width >= 768 && (
-                        <div className={styles.projectList}>
-                            {
-                                projects.map( (project, index) => {
-                                    return (
-                                        <div key={index} onMouseOver={() => {setSelectedProject(index)}} className={styles.projectEl}>
-                                            <h2>{project.title}</h2>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
-                    )}
                 </div>
+                {width >= 768 && (
+                    <div className={styles.projectList}>
+                        {
+                            projects.map( (project, index) => {
+                                return (
+                                    <div key={index} onMouseOver={() => {setSelectedProject(index)}} className={styles.projectEl}>
+                                        <h2>{project.title}</h2>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                )}
             </div>
             {width <= 768 && (
                 <Snapping />
@@ -139,7 +138,9 @@ const Snapping = () => {
                                         className={`w-[250px] h-[100px] object-cover z-[-1] brightness-75`}
                                     />
                                 </div>
-
+                                <Typography size='text-s' className='py-4 px-6'>
+                                    {project.description}
+                                </Typography>
                             </div>
                         )
                     })
