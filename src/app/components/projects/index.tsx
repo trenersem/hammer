@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import styles from './style.module.scss';
 import Image from 'next/image';
@@ -26,7 +28,8 @@ export default function Projects() {
                 pin: true,
                 scrub: 3,
                 start: "top-=50px",
-                end: `+=${container.current!.offsetHeight + 900}px`,
+                // end: `+=${container.current!.offsetHeight + 900}px`,
+                end: `+=600px`,
             })
         }
     }, []);
