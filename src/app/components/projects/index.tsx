@@ -14,7 +14,7 @@ export default function Projects() {
     const imageContainer = React.useRef<HTMLDivElement | null>(null);
     const [width, setWidth ]= React.useState(0);
 
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
         setWidth(window.innerWidth);
     }, []);
 
@@ -34,7 +34,7 @@ export default function Projects() {
 
     return (
         <>
-         {width <= 768 ?
+         {width >= 768 ?
             (
                 <div ref={container} className={styles.projects}>
                     <Typography
@@ -47,23 +47,12 @@ export default function Projects() {
                     <div className={styles.projectDescription}>
                             <div ref={imageContainer} className={styles.imageContainer}>
                             <div className='relative w-[100%] h-[470px] mb-5 rounded-lg overflow-hidden'>
-                                {width <= 768 ? (
-                                    <Image 
-                                        src={`/images/about.avif`}
-                                        fill={true}
-                                        alt="project image"
-                                        priority={true}
-                                        className='object-cover object-right'
-                                    />
-                                ) : (
                                     <Image 
                                         src={`/images/${projects[selectedProject].src}`}
                                         fill={true}
                                         alt="project image"
                                         priority={true}
                                     />
-                                ) }
-                                    
                             </div>
                                 <Typography size='text-s'>
                                         {projects[selectedProject].description}
@@ -80,7 +69,6 @@ export default function Projects() {
                             </Typography>
                         </div>
                     </div>
-                    {width >= 768 && (
                         <div className={styles.projectList}>
                             {
                                 projects.map( (project, index) => {
@@ -92,7 +80,6 @@ export default function Projects() {
                                 })
                             }
                         </div>
-                    )}
                 </div>
             )
            : (
