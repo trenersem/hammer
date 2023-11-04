@@ -29,7 +29,7 @@ function DesktopProjects() {
                 pin: true,
                 scrub: 3,
                 start: "top-=50px",
-                end: `+=${container.current!.offsetHeight - 600}px`,
+                end: `+=${container.current!.offsetHeight - 680}px`,
         //     }
         })
         // }
