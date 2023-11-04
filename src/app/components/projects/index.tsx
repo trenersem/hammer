@@ -19,17 +19,27 @@ export default function Projects() {
     }, []);
 
     React.useLayoutEffect( () => {
-        if(width > 768) {
+        // if(width > 768) {
             gsap.registerPlugin(ScrollTrigger);
             ScrollTrigger.create({
                 trigger: imageContainer.current,
                 pin: true,
                 scrub: 3,
                 start: "top-=50px",
-                end: `+=${container.current!.offsetHeight + 400}px`,
+                end: `+=${container.current!.offsetHeight + 800}px`,
               
-            })
-        }
+        //     })
+        //     gsap.registerPlugin(ScrollTrigger);
+
+        // const timeline = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: document.documentElement,
+        //         scrub: true,
+        //         start: "top",
+        //         end: "+=500px",
+        //     }
+        })
+        // }
     }, []);
 
     return (
@@ -43,7 +53,7 @@ export default function Projects() {
                     Our Services
                 </Typography>
                 <div className={styles.projectDescription}>
-                        <div ref={imageContainer} className={styles.imageContainer} data-scroll data-scroll-speed="-3">
+                        <div ref={imageContainer} className={styles.imageContainer}>
                            <div className='relative w-[100%] h-[470px] mb-5 rounded-lg overflow-hidden'>
                             {width <= 768 ? (
                                 <Image 
