@@ -26,7 +26,7 @@ export default function Projects() {
                 pin: true,
                 scrub: 3,
                 start: "top-=50px",
-                end: `+=${container.current!.offsetHeight}px`,
+                end: `+=${container.current!.offsetHeight + 150}px`,
               
         //     })
         //     gsap.registerPlugin(ScrollTrigger);
