@@ -54,7 +54,7 @@ function DesktopProjects() {
                                 priority={true}
                             />
                     </div>
-                        <Typography size='text-s' className=' pb-10'>
+                        <Typography size='text-s' className=' pb-16'>
                                 {projects[selectedProject].description}
                         </Typography>
                     </div>
