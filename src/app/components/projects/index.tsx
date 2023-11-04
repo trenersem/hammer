@@ -28,10 +28,10 @@ export default function Projects() {
                 trigger: imageContainer.current,
                 pin: true,
                 scrub: 3,
-                start: "top-=50px",
-                // end: `+=${container.current!.offsetHeight + 900}px`,
+                start: "top-=80px",
+                end: `+=${container.current!.offsetHeight + 900}px`,
                 // end: `+=1600px`,
-                end: detectMobile() ?  "0px" : `+=${container.current!.offsetHeight + 400}px`,
+                // end: detectMobile() ?  "0px" : `+=${container.current!.offsetHeight + 400}px`,
 
             })
         }
@@ -83,7 +83,7 @@ export default function Projects() {
                         </Typography>
                     </div>
                 </div>
-                {width >= 768 && (
+                {width >= 768 ? (
                     <div className={styles.projectList}>
                         {
                             projects.map( (project, index) => {
@@ -95,11 +95,11 @@ export default function Projects() {
                             })
                         }
                     </div>
-                )}
+                ) : <Snapping />}
             </div>
-            {width <= 768 && (
+            {/* {width <= 768 && (
                 <Snapping />
-            )}
+            )} */}
         </>
     )
 }
