@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Typography from '../atoms/typography';
 import { projects } from '@/app/constants';
+import { detectMobile } from '@/app/utils/detect-mobile';
 
 
 export default function Projects() {
@@ -20,7 +21,7 @@ export default function Projects() {
         setWidth(window.innerWidth);
     }, []);
 
-    React.useLayoutEffect( () => {
+    React.useEffect( () => {
         if(width > 768) {
             gsap.registerPlugin(ScrollTrigger);
             ScrollTrigger.create({
@@ -29,7 +30,9 @@ export default function Projects() {
                 scrub: 3,
                 start: "top-=50px",
                 // end: `+=${container.current!.offsetHeight + 900}px`,
-                end: `+=600px`,
+                // end: `+=1600px`,
+                end: detectMobile() ?  "0px" : `+=${container.current!.offsetHeight + 400}px`,
+
             })
         }
     }, []);
@@ -126,7 +129,7 @@ const Snapping = () => {
     }, [])
     return (
         <div ref={container}>
-            <div className='flex flex-nowrap overflow-hidden w-full mt-10'>
+            <div className='flex flex-nowrap overflow-hidden w-full mt-16'>
                   {projects.map( (project, index) => {
                         return (
                             <div key={index} className='panel flex flex-col justify-center items-center min-w-[100vw]'>
