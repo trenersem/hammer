@@ -8,15 +8,18 @@ import { projects } from '@/app/constants';
 
 
 export default function Projects() {
+    const [width, setWidth ]= React.useState(0);
+     React.useLayoutEffect(() => {
+        setWidth(window.innerWidth);
+    }, []);
+
+    return width >= 768 ? <DesktopProjects /> : <Snapping/>
+}
+function DesktopProjects() {
 
     const [selectedProject, setSelectedProject] = React.useState(0);
     const container = React.useRef<HTMLDivElement | null>(null);
     const imageContainer = React.useRef<HTMLDivElement | null>(null);
-    const [width, setWidth ]= React.useState(0);
-
-    React.useLayoutEffect(() => {
-        setWidth(window.innerWidth);
-    }, []);
 
     React.useLayoutEffect( () => {
         // if(width > 768) {
@@ -33,59 +36,51 @@ export default function Projects() {
     }, []);
 
     return (
-        <>
-         {width >= 768 ?
-            (
-                <div ref={container} className={styles.projects}>
-                    <Typography
-                        tag='h2'
-                        className={styles.title}
-                        size='text-l'
-                    >
-                        Our Services
-                    </Typography>
-                    <div className={styles.projectDescription}>
-                            <div ref={imageContainer} className={styles.imageContainer}>
-                            <div className='relative w-[100%] h-[470px] mb-5 rounded-lg overflow-hidden'>
-                                    <Image 
-                                        src={`/images/${projects[selectedProject].src}`}
-                                        fill={true}
-                                        alt="project image"
-                                        priority={true}
-                                    />
-                            </div>
-                                <Typography size='text-s'>
-                                        {projects[selectedProject].description}
-                                </Typography>
-                            </div>
-                        <div className={styles.column} data-scroll data-scroll-speed="0.3">
-                            <Typography size='text-xs'>
-                                At our company, we&apos;re your trusted partner in the world of repairs and renovations. We specialize in creating beauty and comfort in your home. Our services span a wide spectrum, including interior and exterior remodeling, painting, fence installation, and a variety of handyman services.
-                            </Typography>
-                        </div>
-                        <div className={styles.column} data-scroll data-scroll-speed="0.3">
-                            <Typography size='text-xs'>
-                                Our team of experienced professionals is always ready to bring your ideas to life. We strive for the highest standards of quality in every project and put in the utmost effort to ensure you receive an excellent result. When you entrust us with your tasks, you not only get a professional approach but also confidence in our ability to get things done right. Make your life better by choosing our company for your remodeling and construction projects.
-                            </Typography>
-                        </div>
+        <div ref={container} className={styles.projects}>
+            <Typography
+                tag='h2'
+                className={styles.title}
+                size='text-l'
+            >
+                Our Services
+            </Typography>
+            <div className={styles.projectDescription}>
+                    <div ref={imageContainer} className={styles.imageContainer}>
+                    <div className='relative w-[100%] h-[470px] mb-5 rounded-lg overflow-hidden'>
+                            <Image 
+                                src={`/images/${projects[selectedProject].src}`}
+                                fill={true}
+                                alt="project image"
+                                priority={true}
+                            />
                     </div>
-                        <div className={styles.projectList}>
-                            {
-                                projects.map( (project, index) => {
-                                    return (
-                                        <div key={index} onMouseOver={() => {setSelectedProject(index)}} className={styles.projectEl}>
-                                            <h2>{project.title}</h2>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </div>
+                        <Typography size='text-s'>
+                                {projects[selectedProject].description}
+                        </Typography>
+                    </div>
+                <div className={styles.column} data-scroll data-scroll-speed="0.3">
+                    <Typography size='text-xs'>
+                        At our company, we&apos;re your trusted partner in the world of repairs and renovations. We specialize in creating beauty and comfort in your home. Our services span a wide spectrum, including interior and exterior remodeling, painting, fence installation, and a variety of handyman services.
+                    </Typography>
                 </div>
-            )
-           : (
-                <Snapping />
-            )}
-        </>
+                <div className={styles.column} data-scroll data-scroll-speed="0.3">
+                    <Typography size='text-xs'>
+                        Our team of experienced professionals is always ready to bring your ideas to life. We strive for the highest standards of quality in every project and put in the utmost effort to ensure you receive an excellent result. When you entrust us with your tasks, you not only get a professional approach but also confidence in our ability to get things done right. Make your life better by choosing our company for your remodeling and construction projects.
+                    </Typography>
+                </div>
+            </div>
+                <div className={styles.projectList}>
+                    {
+                        projects.map( (project, index) => {
+                            return (
+                                <div key={index} onMouseOver={() => {setSelectedProject(index)}} className={styles.projectEl}>
+                                    <h2>{project.title}</h2>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+        </div>
     )
 }
 
