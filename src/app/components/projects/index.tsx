@@ -7,7 +7,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Typography from '../atoms/typography';
 import { projects } from '@/app/constants';
-import { detectMobile } from '@/app/utils/detect-mobile';
 
 
 export default function Projects() {
@@ -21,18 +20,15 @@ export default function Projects() {
         setWidth(window.innerWidth);
     }, []);
 
-    React.useEffect( () => {
+    React.useLayoutEffect( () => {
         if(width > 768) {
             gsap.registerPlugin(ScrollTrigger);
             ScrollTrigger.create({
                 trigger: imageContainer.current,
                 pin: true,
                 scrub: 3,
-                start: "top-=80px",
+                start: "top-=50px",
                 end: `+=${container.current!.offsetHeight + 900}px`,
-                // end: `+=1600px`,
-                // end: detectMobile() ?  "0px" : `+=${container.current!.offsetHeight + 400}px`,
-
             })
         }
     }, []);
@@ -82,24 +78,24 @@ export default function Projects() {
                             Our team of experienced professionals is always ready to bring your ideas to life. We strive for the highest standards of quality in every project and put in the utmost effort to ensure you receive an excellent result. When you entrust us with your tasks, you not only get a professional approach but also confidence in our ability to get things done right. Make your life better by choosing our company for your remodeling and construction projects.
                         </Typography>
                     </div>
+                    {width >= 768 && (
+                        <div className={styles.projectList}>
+                            {
+                                projects.map( (project, index) => {
+                                    return (
+                                        <div key={index} onMouseOver={() => {setSelectedProject(index)}} className={styles.projectEl}>
+                                            <h2>{project.title}</h2>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    )}
                 </div>
-                {width >= 768 ? (
-                    <div className={styles.projectList}>
-                        {
-                            projects.map( (project, index) => {
-                                return (
-                                    <div key={index} onMouseOver={() => {setSelectedProject(index)}} className={styles.projectEl}>
-                                        <h2>{project.title}</h2>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                ) : <Snapping />}
             </div>
-            {/* {width <= 768 && (
+            {width <= 768 && (
                 <Snapping />
-            )} */}
+            )}
         </>
     )
 }
@@ -129,7 +125,7 @@ const Snapping = () => {
     }, [])
     return (
         <div ref={container}>
-            <div className='flex flex-nowrap overflow-hidden w-full mt-16'>
+            <div className='flex flex-nowrap overflow-hidden w-full mt-10'>
                   {projects.map( (project, index) => {
                         return (
                             <div key={index} className='panel flex flex-col justify-center items-center min-w-[100vw]'>
