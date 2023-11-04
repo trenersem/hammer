@@ -21,6 +21,9 @@
     @media($media_mobile) {
        flex-direction: column-reverse;
        justify-content: start;
+       &:last-child {
+        padding-right: 80px;
+       }
     }
 
 }
@@ -73,10 +76,6 @@
     width: 100%;
     margin-top: 200px;
     margin-bottom: 200px;
-
-    &:last-child {
-        padding-right: 180px;
-    }
 
     @media($media_mobile) {
          flex-direction: row;
