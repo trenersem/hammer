@@ -3,7 +3,7 @@
 .projects{
     position: relative;
     color: white;
-    margin-top: 25vh;
+    margin-top: 20vh;
     padding: 10%;
 
     @media($media_mobile) {
@@ -73,6 +73,10 @@
     width: 100%;
     margin-top: 200px;
     margin-bottom: 200px;
+
+    &:last-child {
+        padding-right: 180px;
+    }
 
     @media($media_mobile) {
          flex-direction: row;
