@@ -43,7 +43,7 @@ export default function Projects() {
                     Our Services
                 </Typography>
                 <div className={styles.projectDescription}>
-                        <div ref={imageContainer} className={styles.imageContainer}>
+                        <div ref={imageContainer} className={styles.imageContainer} data-scroll data-scroll-speed="-3">
                            <div className='relative w-[100%] h-[470px] mb-5 rounded-lg overflow-hidden'>
                             {width <= 768 ? (
                                 <Image 
@@ -113,7 +113,7 @@ const Snapping = () => {
                 scrollTrigger: {
                     trigger: container.current,
                     pin: true,
-                    start: "top-=100px",
+                    start: "top-=50px",
                     scrub: 5,
                     snap: 1 / (sections.length - 1),
                     end: () => `+=` + (container.current ? container.current.offsetWidth + 24 * projects.length : 0),
